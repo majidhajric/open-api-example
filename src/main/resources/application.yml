@@ -1,0 +1,19 @@
+
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8180/auth/realms/example/protocol/openid-connect/certs
+          issuer-uri: http://localhost:8180/auth/realms/example
+
+springdoc:
+  version: '@springdoc.version@'
+  swagger-ui:
+    disable-swagger-default-url: true
+    oauth:
+      clientId: example
+      clientSecret:
+  oAuthFlow:
+    authorizationUrl: http://localhost:8180/auth/realms/example/protocol/openid-connect/auth
+    tokenUrl: http://localhost:8180/auth/realms/example/protocol/openid-connect/token
